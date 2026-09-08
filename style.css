@@ -1,6 +1,6 @@
 /* =========================================
    THE VOLLEY BUNCH
-   MAIN WEBSITE STYLES
+   MAIN WEBSITE STYLESHEET
 ========================================= */
 
 
@@ -10,35 +10,38 @@
 
 :root {
 
-    --navy: #0054A6;
-    --blue: #0077B6;
+    --blue: #075bb5;
 
-    --yellow: #FFC20A;
+    --dark-blue: #064b94;
 
-    --orange: #F4511E;
+    --navy: #003f88;
 
-    --cream: #FFF9ED;
+    --orange: #f04b23;
 
-    --white: #FFFFFF;
+    --yellow: #ffb800;
 
-    --dark: #17202A;
+    --white: #ffffff;
 
-    --grey: #666666;
+    --cream: #fffaf0;
+
+    --light-blue: #eef6ff;
+
+    --dark: #12304f;
 
 }
 
 
 /* =========================================
-   GENERAL
+   RESET
 ========================================= */
 
 * {
 
-    box-sizing: border-box;
-
     margin: 0;
 
     padding: 0;
+
+    box-sizing: border-box;
 
 }
 
@@ -61,26 +64,6 @@ body {
 
     color: var(--navy);
 
-    line-height: 1.5;
-
-}
-
-
-/* Remove default link styling */
-
-a {
-
-    text-decoration: none;
-
-}
-
-
-/* Images */
-
-img {
-
-    max-width: 100%;
-
 }
 
 
@@ -90,25 +73,24 @@ img {
 
 .navbar {
 
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-
-    height: 90px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 10px 6%;
+    height: 84px;
 
     background: var(--white);
 
-    border-bottom: 2px solid var(--navy);
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    position: relative;
+
+    z-index: 100;
+
+    border-bottom:
+        2px solid var(--blue);
 
 }
 
@@ -126,11 +108,11 @@ img {
 
 .nav-logo img {
 
-    width: 70px;
+    height: 68px;
 
-    height: 70px;
+    width: auto;
 
-    object-fit: contain;
+    display: block;
 
 }
 
@@ -143,16 +125,18 @@ img {
 
     align-items: center;
 
-    gap: 35px;
+    gap: 36px;
 
 }
 
 
 .nav-links a {
 
+    text-decoration: none;
+
     color: var(--navy);
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 800;
 
@@ -160,12 +144,12 @@ img {
 
     position: relative;
 
-    padding: 8px 0;
+    padding: 10px 0;
+
+    transition: 0.25s ease;
 
 }
 
-
-/* Hover */
 
 .nav-links a:hover {
 
@@ -174,7 +158,7 @@ img {
 }
 
 
-/* Active page */
+/* ACTIVE LINK */
 
 .nav-links a.active {
 
@@ -182,8 +166,6 @@ img {
 
 }
 
-
-/* Small line under active page */
 
 .nav-links a.active::after {
 
@@ -205,38 +187,15 @@ img {
 
 
 /* =========================================
-   GENERAL SECTION SETTINGS
-========================================= */
-
-section {
-
-    padding: 100px 8%;
-
-}
-
-
-.section-label {
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 25px;
-
-}
-
-
-/* =========================================
-   HERO
+   HERO / WELCOME SECTION
 ========================================= */
 
 .hero {
 
     position: relative;
 
-    min-height: calc(100vh - 90px);
+    min-height:
+        calc(100vh - 84px);
 
     display: flex;
 
@@ -244,20 +203,34 @@ section {
 
     justify-content: flex-start;
 
-    padding: 100px 8%;
+    padding:
+        90px 8%;
 
     overflow: hidden;
 
+    color: var(--white);
+
     background-image:
-        url("images/tvb-pesta-mix-new.jpg");
+        url("images/tvb-pesta-mix.jpg");
 
     background-size: cover;
 
-    background-position: center top;
+    /*
+       Shows more of the upper part
+       of the photograph.
+    */
+
+    background-position:
+        center top;
 
     background-repeat: no-repeat;
+
 }
 
+
+/* =========================================
+   HERO PHOTO OVERLAY
+========================================= */
 
 .hero-overlay {
 
@@ -265,11 +238,25 @@ section {
 
     inset: 0;
 
-    background: rgba(255, 249, 237, 0.55);
+    /*
+       Blue translucent overlay.
+
+       This makes the photograph feel
+       more like part of the TVB branding
+       while keeping the team visible.
+    */
+
+    background:
+        rgba(0, 63, 136, 0.32);
 
     z-index: 1;
+
 }
 
+
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
 
@@ -277,65 +264,95 @@ section {
 
     z-index: 2;
 
-    max-width: 750px;
+    max-width: 720px;
+
 }
 
 
-/* WELCOME TO */
+/* =========================================
+   WELCOME TO
+========================================= */
 
 .small-heading {
 
-    font-size: 13px;
+    font-size: 14px;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 
     color: var(--orange);
 
     margin-bottom: 20px;
 
+    text-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 
-/* MAIN TITLE */
+/* =========================================
+   HERO TITLE
+========================================= */
 
 .hero h1 {
 
     font-size:
-        clamp(70px, 11vw, 150px);
+        clamp(70px, 10vw, 145px);
 
     line-height: 0.82;
 
-    letter-spacing: -7px;
-
-    color: var(--navy);
-
-    margin-bottom: 40px;
+    letter-spacing: -6px;
 
     font-weight: 900;
 
+    color: var(--white);
+
+    margin-bottom: 42px;
+
+    /*
+       White makes the title stand out
+       against the team photo.
+    */
+
+    text-shadow:
+        3px 4px 0 var(--blue);
+
 }
 
 
-/* DESCRIPTION */
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
 
 .hero-description {
 
-    max-width: 520px;
+    max-width: 540px;
 
-    font-size: 19px;
+    font-size: 18px;
 
     line-height: 1.6;
 
-    color: var(--dark);
+    font-weight: 600;
+
+    color: var(--white);
 
     margin-bottom: 35px;
+
+    /*
+       Soft shadow makes the text readable
+       even when people are behind it.
+    */
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.5);
 
 }
 
 
-/* BUTTON CONTAINER */
+/* =========================================
+   HERO BUTTONS
+========================================= */
 
 .hero-buttons {
 
@@ -349,7 +366,7 @@ section {
 
 
 /* =========================================
-   BUTTONS
+   GENERAL BUTTONS
 ========================================= */
 
 .button {
@@ -360,15 +377,18 @@ section {
 
     justify-content: center;
 
-    padding: 15px 25px;
+    padding:
+        16px 25px;
 
-    font-size: 12px;
+    min-height: 50px;
 
-    font-weight: 800;
+    text-decoration: none;
 
-    letter-spacing: 1px;
+    font-size: 13px;
 
-    border: 2px solid transparent;
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
 
     transition:
         transform 0.2s ease,
@@ -385,15 +405,16 @@ section {
 }
 
 
-/* BLUE BUTTON */
+/* PRIMARY BUTTON */
 
 .button-primary {
 
-    background: var(--navy);
+    background: var(--blue);
 
     color: var(--white);
 
-    border-color: var(--navy);
+    border:
+        2px solid var(--blue);
 
 }
 
@@ -407,46 +428,26 @@ section {
 }
 
 
-/* OUTLINE BUTTON */
+/* SECONDARY BUTTON */
 
 .button-secondary {
 
-    background: transparent;
+    background:
+        rgba(255, 255, 255, 0.85);
 
-    color: var(--navy);
+    color: var(--blue);
 
-    border-color: var(--navy);
+    border:
+        2px solid var(--blue);
 
 }
 
 
 .button-secondary:hover {
 
-    background: var(--navy);
+    background: var(--blue);
 
     color: var(--white);
-
-}
-
-
-/* WHITE BUTTON */
-
-.button-light {
-
-    background: var(--white);
-
-    color: var(--navy);
-
-    border-color: var(--white);
-
-}
-
-
-.button-light:hover {
-
-    background: var(--yellow);
-
-    border-color: var(--yellow);
 
 }
 
@@ -457,53 +458,62 @@ section {
 
 .intro {
 
-    background: var(--navy);
+    background: var(--blue);
 
     color: var(--white);
 
-    position: relative;
+    padding:
+        110px 8%;
 
-    z-index: 1;
-
-}
-
-
-/* Section number */
-
-.intro .section-label {
-
-    color: var(--yellow);
+    min-height: 600px;
 
 }
 
 
-/* Main heading */
+/* SECTION LABEL */
+
+.section-label {
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    color: var(--orange);
+
+    margin-bottom: 30px;
+
+}
+
+
+/* INTRO HEADING */
 
 .intro h2 {
 
     font-size:
         clamp(55px, 8vw, 110px);
 
-    line-height: 0.88;
+    line-height: 0.9;
 
-    letter-spacing: -5px;
+    letter-spacing: -4px;
+
+    font-weight: 900;
 
     color: var(--white);
 
     margin-bottom: 45px;
 
-    font-weight: 900;
-
 }
 
 
-/* Description */
+/* INTRO TEXT */
 
 .intro-text {
 
-    max-width: 700px;
+    max-width: 650px;
 
-    font-size: 20px;
+    font-size: 19px;
 
     line-height: 1.7;
 
@@ -514,40 +524,37 @@ section {
 }
 
 
-/* Learn more */
-
-.intro .text-link {
-
-    color: var(--yellow);
-
-}
-
-
-/* =========================================
-   TEXT LINKS
-========================================= */
+/* TEXT LINK */
 
 .text-link {
 
     display: inline-block;
 
-    font-size: 12px;
+    color: var(--white);
 
-    font-weight: 800;
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 900;
 
     letter-spacing: 1px;
 
-    color: var(--orange);
+    border-bottom:
+        2px solid var(--orange);
 
-    transition:
-        transform 0.2s ease;
+    padding-bottom: 7px;
+
+    transition: 0.2s ease;
 
 }
 
 
 .text-link:hover {
 
-    transform: translateX(5px);
+    color: var(--yellow);
+
+    border-color: var(--yellow);
 
 }
 
@@ -558,6 +565,9 @@ section {
 
 .activities {
 
+    padding:
+        110px 8%;
+
     background: var(--cream);
 
     color: var(--navy);
@@ -565,31 +575,20 @@ section {
 }
 
 
-/* Section heading */
-
 .activities h2 {
 
     font-size:
-        clamp(50px, 7vw, 90px);
+        clamp(55px, 8vw, 105px);
 
-    line-height: 0.85;
+    line-height: 0.9;
 
-    letter-spacing: -5px;
-
-    color: var(--navy);
-
-    margin-bottom: 70px;
+    letter-spacing: -4px;
 
     font-weight: 900;
 
-}
+    margin-bottom: 65px;
 
-
-/* Section label */
-
-.activities .section-label {
-
-    color: var(--orange);
+    color: var(--navy);
 
 }
 
@@ -612,77 +611,71 @@ section {
 
 .activity-card {
 
-    min-height: 300px;
+    background: var(--white);
+
+    border-top:
+        6px solid var(--blue);
 
     padding: 35px;
 
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    background: var(--white);
-
-    border: 2px solid var(--navy);
-
-    border-radius: 20px;
+    min-height: 280px;
 
     transition:
         transform 0.25s ease,
-        background 0.25s ease;
+        box-shadow 0.25s ease;
 
 }
 
 
 .activity-card:hover {
 
-    transform: translateY(-8px);
+    transform:
+        translateY(-8px);
 
-    background: var(--yellow);
+    box-shadow:
+        0 15px 35px
+        rgba(0, 63, 136, 0.15);
 
 }
 
-
-/* CARD NUMBER */
 
 .activity-card span {
 
-    font-size: 12px;
-
-    font-weight: 800;
+    display: block;
 
     color: var(--orange);
 
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+
 }
 
-
-/* CARD TITLE */
 
 .activity-card h3 {
 
-    font-size: 45px;
+    font-size: 40px;
 
-    line-height: 0.9;
+    font-weight: 900;
 
-    letter-spacing: -2px;
+    color: var(--blue);
 
-    color: var(--navy);
+    margin-bottom: 18px;
 
 }
 
 
-/* CARD DESCRIPTION */
-
 .activity-card p {
 
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.6;
 
     color: var(--dark);
-
-    max-width: 300px;
 
 }
 
@@ -693,38 +686,28 @@ section {
 
 .home-events {
 
-    background: var(--yellow);
+    padding:
+        110px 8%;
 
-    color: var(--navy);
-
-}
-
-
-/* Label */
-
-.home-events .section-label {
-
-    color: var(--orange);
+    background: var(--light-blue);
 
 }
 
-
-/* Heading */
 
 .home-events h2 {
 
     font-size:
-        clamp(50px, 7vw, 90px);
+        clamp(55px, 8vw, 105px);
 
-    line-height: 0.85;
+    line-height: 0.9;
 
-    letter-spacing: -5px;
+    letter-spacing: -4px;
+
+    font-weight: 900;
 
     color: var(--navy);
 
     margin-bottom: 60px;
-
-    font-weight: 900;
 
 }
 
@@ -735,32 +718,32 @@ section {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
+
+    justify-content: space-between;
 
     gap: 30px;
 
-    padding: 35px 0;
+    background: var(--white);
 
-    border-top: 2px solid var(--navy);
+    border-left:
+        7px solid var(--orange);
 
-    border-bottom: 2px solid var(--navy);
+    padding:
+        40px 45px;
 
     margin-bottom: 30px;
 
 }
 
 
-/* EVENT DATE */
-
 .event-date {
 
     color: var(--orange);
 
-    font-size: 12px;
+    font-size: 13px;
 
-    font-weight: 800;
+    font-weight: 900;
 
     letter-spacing: 2px;
 
@@ -769,16 +752,14 @@ section {
 }
 
 
-/* EVENT TITLE */
-
 .home-event h3 {
 
     font-size:
-        clamp(35px, 5vw, 60px);
+        clamp(30px, 4vw, 55px);
 
-    line-height: 0.9;
+    line-height: 0.95;
 
-    letter-spacing: -3px;
+    font-weight: 900;
 
     color: var(--navy);
 
@@ -791,24 +772,21 @@ section {
 
 .home-cta {
 
-    min-height: 500px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
     background: var(--orange);
 
     color: var(--white);
 
+    padding:
+        110px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 500px;
+
 }
 
-
-/* CTA LABEL */
 
 .home-cta .section-label {
 
@@ -817,22 +795,45 @@ section {
 }
 
 
-/* CTA HEADING */
-
 .home-cta h2 {
 
     font-size:
         clamp(60px, 9vw, 120px);
 
-    line-height: 0.82;
+    line-height: 0.85;
 
-    letter-spacing: -6px;
+    letter-spacing: -5px;
+
+    font-weight: 900;
 
     color: var(--white);
 
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 
-    font-weight: 900;
+}
+
+
+/* CTA BUTTON */
+
+.button-light {
+
+    background: var(--white);
+
+    color: var(--orange);
+
+    border:
+        2px solid var(--white);
+
+}
+
+
+.button-light:hover {
+
+    background: var(--navy);
+
+    border-color: var(--navy);
+
+    color: var(--white);
 
 }
 
@@ -843,50 +844,42 @@ section {
 
 footer {
 
-    padding: 55px 8%;
-
-    background: var(--navy);
+    background: var(--blue);
 
     color: var(--white);
+
+    padding:
+        65px 8% 35px;
 
     display: grid;
 
     grid-template-columns:
-        1fr auto auto;
+        1fr auto;
 
-    gap: 50px;
-
-    align-items: center;
-
-    position: relative;
-
-    z-index: 1;
+    gap: 40px;
 
 }
 
 
-/* FOOTER TITLE */
-
 footer strong {
 
-    color: var(--yellow);
+    font-size: 20px;
 
-    font-size: 15px;
+    font-weight: 900;
 
     letter-spacing: 1px;
 
 }
 
 
-/* FOOTER DESCRIPTION */
-
 footer p {
 
-    color: var(--white);
+    margin-top: 10px;
 
-    font-size: 13px;
+    font-size: 14px;
 
-    margin-top: 6px;
+    color:
+        rgba(255, 255, 255, 0.8);
 
 }
 
@@ -897,7 +890,9 @@ footer p {
 
     display: flex;
 
-    gap: 25px;
+    gap: 30px;
+
+    align-items: flex-start;
 
 }
 
@@ -910,10 +905,11 @@ footer p {
 
     font-size: 13px;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    transition:
-        color 0.2s ease;
+    text-transform: uppercase;
+
+    transition: 0.2s ease;
 
 }
 
@@ -927,11 +923,18 @@ footer p {
 
 /* COPYRIGHT */
 
-footer .copyright {
+.copyright {
 
-    margin: 0;
+    grid-column:
+        1 / -1;
 
-    color: var(--white);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    padding-top: 25px;
+
+    margin-top: 15px;
 
     font-size: 12px;
 
@@ -939,621 +942,39 @@ footer .copyright {
 
 
 /* =========================================
-   EVENTS PAGE
+   RESPONSIVE — TABLET
 ========================================= */
 
-.events-hero {
-
-    min-height: 70vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    background: var(--orange);
-
-    color: var(--white);
-
-}
-
-
-.events-hero .small-heading {
-
-    color: var(--yellow);
-
-}
-
-
-.events-hero h1 {
-
-    font-size:
-        clamp(70px, 12vw, 160px);
-
-    line-height: 0.8;
-
-    letter-spacing: -7px;
-
-    color: var(--white);
-
-    margin-bottom: 35px;
-
-    font-weight: 900;
-
-}
-
-
-.events-hero > p:last-child {
-
-    max-width: 600px;
-
-    font-size: 20px;
-
-}
-
-
-/* UPCOMING EVENTS */
-
-.upcoming-events {
-
-    background: var(--cream);
-
-}
-
-
-.upcoming-events .section-label {
-
-    color: var(--orange);
-
-}
-
-
-.upcoming-events h2,
-.past-events h2 {
-
-    font-size:
-        clamp(50px, 7vw, 90px);
-
-    line-height: 0.85;
-
-    letter-spacing: -5px;
-
-    color: var(--navy);
-
-    margin-bottom: 70px;
-
-    font-weight: 900;
-
-}
-
-
-/* UPCOMING EVENT */
-
-.upcoming-event {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-
-    margin-bottom: 80px;
-
-}
-
-
-/* EVENT IMAGE */
-
-.event-image {
-
-    position: relative;
-
-    aspect-ratio: 4 / 3;
-
-    overflow: hidden;
-
-    border-radius: 25px;
-
-    background: var(--yellow);
-
-}
-
-
-.event-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-}
-
-
-/* EVENT BADGE */
-
-.event-badge {
-
-    position: absolute;
-
-    top: 20px;
-
-    left: 20px;
-
-    padding: 9px 15px;
-
-    border-radius: 30px;
-
-    background: var(--orange);
-
-    color: var(--white);
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* EVENT INFO */
-
-.event-info {
-
-    max-width: 600px;
-
-}
-
-
-.event-info h3 {
-
-    color: var(--navy);
-
-    font-size:
-        clamp(40px, 5vw, 65px);
-
-    line-height: 0.9;
-
-    letter-spacing: -3px;
-
-    margin-bottom: 25px;
-
-}
-
-
-.event-info > p {
-
-    color: var(--grey);
-
-    font-size: 17px;
-
-    margin-bottom: 30px;
-
-}
-
-
-/* EVENT DETAILS */
-
-.event-details {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-
-    padding: 20px 0;
-
-    margin-bottom: 30px;
-
-    border-top: 1px solid #D8D0C0;
-
-    border-bottom: 1px solid #D8D0C0;
-
-}
-
-
-.event-details div {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 3px;
-
-}
-
-
-.event-details span {
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    color: var(--grey);
-
-}
-
-
-.event-details strong {
-
-    font-size: 14px;
-
-    color: var(--navy);
-
-}
-
-
-/* PLACEHOLDER EVENT */
-
-.placeholder-image {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 100px;
-
-}
-
-
-.placeholder-image .event-badge {
-
-    background: var(--navy);
-
-}
-
-
-/* =========================================
-   PAST EVENTS
-========================================= */
-
-.past-events {
-
-    background: var(--white);
-
-}
-
-
-.past-events .section-label {
-
-    color: var(--orange);
-
-}
-
-
-.past-event-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-
-}
-
-
-/* PAST EVENT CARD */
-
-.past-event-card {
-
-    border: 2px solid var(--navy);
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    background: var(--cream);
-
-    transition:
-        transform 0.25s ease;
-
-}
-
-
-.past-event-card:hover {
-
-    transform: translateY(-8px);
-
-}
-
-
-/* PAST EVENT IMAGE */
-
-.past-event-image {
-
-    width: 100%;
-
-    aspect-ratio: 4 / 3;
-
-    overflow: hidden;
-
-}
-
-
-.past-event-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition:
-        transform 0.4s ease;
-
-}
-
-
-.past-event-card:hover
-.past-event-image img {
-
-    transform: scale(1.05);
-
-}
-
-
-/* PAST EVENT CONTENT */
-
-.past-event-content {
-
-    padding: 30px;
-
-}
-
-
-.past-event-content h3 {
-
-    font-size: 30px;
-
-    line-height: 0.9;
-
-    letter-spacing: -2px;
-
-    color: var(--navy);
-
-    margin-bottom: 20px;
-
-}
-
-
-.past-event-content >
-p:not(.event-date) {
-
-    color: var(--grey);
-
-    font-size: 15px;
-
-    margin-bottom: 25px;
-
-}
-
-
-.past-event-content .text-link {
-
-    color: var(--orange);
-
-}
-
-
-/* =========================================
-   EVENTS CTA
-========================================= */
-
-.event-cta {
-
-    background: var(--navy);
-
-    color: var(--white);
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 60px;
-
-}
-
-
-.event-cta .section-label {
-
-    color: var(--yellow);
-
-}
-
-
-.event-cta h2 {
-
-    font-size:
-        clamp(55px, 8vw, 100px);
-
-    line-height: 0.85;
-
-    letter-spacing: -5px;
-
-    margin-bottom: 40px;
-
-}
-
-
-.event-cta img {
-
-    width: 330px;
-
-    max-width: 35%;
-
-}
-
-
-/* =========================================
-   MOBILE NAVIGATION
-========================================= */
-
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
 
     .navbar {
 
-        height: auto;
-
-        min-height: 80px;
-
-        padding: 10px 5%;
-
-    }
-
-
-    .nav-logo img {
-
-        width: 55px;
-
-        height: 55px;
+        padding:
+            0 5%;
 
     }
 
 
     .nav-links {
 
-        gap: 15px;
+        gap: 20px;
 
     }
 
-
-    .nav-links a {
-
-        font-size: 10px;
-
-        letter-spacing: 0.5px;
-
-    }
-
-
-    .nav-links a.active::after {
-
-        height: 2px;
-
-    }
-
-
-    /* Sections */
-
-    section {
-
-        padding: 75px 7%;
-
-    }
-
-
-    /* Hero */
 
     .hero {
 
-        min-height:
-            calc(100vh - 80px);
-
         padding:
-            80px 7%;
-
-        background-position:
-            center center;
-
-    }
-
-
-    .hero-overlay {
-
-        background:
-            rgba(255, 249, 237, 0.78);
-
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            clamp(60px, 17vw, 100px);
-
-        letter-spacing: -4px;
-
-    }
-
-
-    .hero-description {
-
-        font-size: 16px;
-
-    }
-
-
-    /* Who We Are */
-
-    .intro h2 {
-
-        font-size:
-            clamp(55px, 15vw, 90px);
-
-        letter-spacing: -3px;
-
-    }
-
-
-    .intro-text {
-
-        font-size: 17px;
-
-    }
-
-
-    /* Activities */
-
-    .activities h2 {
-
-        font-size:
-            clamp(50px, 14vw, 80px);
-
-        letter-spacing: -3px;
+            80px 5%;
 
     }
 
 
     .activity-grid {
 
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .activity-card {
-
-        min-height: 250px;
-
-    }
-
-
-    /* Home Events */
-
-    .home-events h2 {
-
-        font-size:
-            clamp(50px, 14vw, 80px);
-
-        letter-spacing: -3px;
+        grid-template-columns:
+            1fr;
 
     }
 
@@ -1567,45 +988,10 @@ p:not(.event-date) {
     }
 
 
-    .home-event h3 {
-
-        font-size: 45px;
-
-        letter-spacing: -2px;
-
-    }
-
-
-    /* CTA */
-
-    .home-cta {
-
-        min-height: 450px;
-
-        text-align: left;
-
-        justify-content: flex-start;
-
-    }
-
-
-    .home-cta h2 {
-
-        font-size:
-            clamp(60px, 17vw, 100px);
-
-        letter-spacing: -4px;
-
-    }
-
-
-    /* Footer */
-
     footer {
 
-        grid-template-columns: 1fr;
-
-        gap: 25px;
+        grid-template-columns:
+            1fr;
 
     }
 
@@ -1614,96 +1000,94 @@ p:not(.event-date) {
 
         flex-wrap: wrap;
 
-        gap: 20px;
-
-    }
-
-
-    /* Events page */
-
-    .events-hero h1 {
-
-        font-size:
-            clamp(65px, 18vw, 110px);
-
-        letter-spacing: -4px;
-
-    }
-
-
-    .upcoming-event {
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        margin-bottom: 70px;
-
-    }
-
-
-    .event-info h3 {
-
-        letter-spacing: -2px;
-
-    }
-
-
-    .past-event-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .event-cta {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-    }
-
-
-    .event-cta img {
-
-        max-width: 60%;
-
-        width: 280px;
-
-        align-self: center;
-
     }
 
 }
 
 
 /* =========================================
-   SMALL PHONES
+   RESPONSIVE — MOBILE
 ========================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
 
 
-    .nav-links {
+    .navbar {
 
-        gap: 9px;
+        height: auto;
 
-    }
+        min-height: 80px;
 
+        padding:
+            10px 5%;
 
-    .nav-links a {
+        flex-direction: column;
 
-        font-size: 9px;
+        gap: 10px;
 
     }
 
 
     .nav-logo img {
 
-        width: 48px;
+        height: 55px;
 
-        height: 48px;
+    }
+
+
+    .nav-links {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .nav-links a {
+
+        font-size: 11px;
+
+    }
+
+
+    .hero {
+
+        min-height:
+            calc(100vh - 110px);
+
+        padding:
+            70px 6%;
+
+        background-position:
+            center top;
+
+    }
+
+
+    .hero-overlay {
+
+        background:
+            rgba(0, 63, 136, 0.42);
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(55px, 18vw, 90px);
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 16px;
 
     }
 
@@ -1719,35 +1103,49 @@ p:not(.event-date) {
 
     .button {
 
-        width: 100%;
+        width: auto;
 
     }
 
 
-    .hero h1 {
+    .intro,
+    .activities,
+    .home-events,
+    .home-cta {
 
-        font-size: 58px;
-
-    }
-
-
-    .intro h2 {
-
-        font-size: 55px;
+        padding:
+            80px 6%;
 
     }
 
 
-    .activities h2 {
-
-        font-size: 50px;
-
-    }
-
-
+    .intro h2,
+    .activities h2,
     .home-events h2 {
 
-        font-size: 50px;
+        letter-spacing: -2px;
+
+    }
+
+
+    .activity-card {
+
+        min-height: auto;
+
+    }
+
+
+    .home-event {
+
+        padding:
+            30px;
+
+    }
+
+
+    .home-cta h2 {
+
+        letter-spacing: -3px;
 
     }
 
