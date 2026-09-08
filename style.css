@@ -1759,3 +1759,308 @@ p:not(.event-date) {
 
 
 }
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+
+/* PAGE HERO */
+
+.page-hero {
+    padding: 120px 8% 100px;
+    background: #f8f5ed;
+    color: #0057a8;
+}
+
+.page-hero .small-heading {
+    color: #f04b23;
+}
+
+.page-hero h1 {
+    color: #0057a8;
+}
+
+.page-hero > p:last-child {
+    color: #222;
+    max-width: 600px;
+}
+
+
+/* =========================
+   OUR STORY
+========================= */
+
+.story {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 60px;
+
+    padding: 110px 8%;
+
+    background: #0057a8;
+    color: white;
+}
+
+
+/* STORY TITLE */
+
+.story-title .section-label {
+    color: #ffcc00;
+}
+
+.story-title h2 {
+    color: white;
+}
+
+
+/* STORY TEXT */
+
+.story-text {
+    max-width: 700px;
+}
+
+.story-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.story-text .story-intro {
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+.story-text strong {
+    color: #ffcc00;
+}
+
+
+/* =========================
+   VALUES
+========================= */
+
+.about-values {
+    padding: 110px 8%;
+    background: #f8f5ed;
+    color: #0057a8;
+}
+
+.about-values .section-label {
+    color: #f04b23;
+}
+
+.about-values h2 {
+    color: #0057a8;
+}
+
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    margin-top: 60px;
+}
+
+
+.value {
+    padding: 35px;
+
+    border: 2px solid #0057a8;
+
+    background: white;
+}
+
+
+.value-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f04b23;
+
+    margin-bottom: 25px;
+}
+
+
+.value h3 {
+    color: #0057a8;
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+
+.value p {
+    color: #333;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   WHAT WE OFFER
+========================= */
+
+.offer {
+    padding: 110px 8%;
+
+    background: white;
+    color: #0057a8;
+}
+
+
+.offer .section-label {
+    color: #f04b23;
+}
+
+
+.offer h2 {
+    color: #0057a8;
+}
+
+
+.offer-list {
+    margin-top: 60px;
+}
+
+
+.offer-list > div {
+    display: grid;
+
+    grid-template-columns: 80px 250px 1fr;
+
+    gap: 30px;
+
+    align-items: start;
+
+    padding: 30px 0;
+
+    border-top: 2px solid #0057a8;
+}
+
+
+.offer-list > div:last-child {
+    border-bottom: 2px solid #0057a8;
+}
+
+
+.offer-list span {
+    color: #f04b23;
+
+    font-weight: bold;
+}
+
+
+.offer-list strong {
+    color: #0057a8;
+
+    font-size: 20px;
+}
+
+
+.offer-list p {
+    color: #333;
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+/* =========================
+   ABOUT CTA
+========================= */
+
+.about-cta {
+    padding: 110px 8%;
+
+    background: #ffcc00;
+
+    color: #0057a8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+.about-cta h2 {
+    color: #0057a8;
+}
+
+
+.about-cta .button-dark {
+    background: #0057a8;
+    color: white;
+}
+
+
+.about-cta .button-dark:hover {
+    background: #f04b23;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+
+    .page-hero {
+        padding: 80px 6%;
+    }
+
+
+    .story {
+        grid-template-columns: 1fr;
+
+        padding: 80px 6%;
+
+        gap: 40px;
+    }
+
+
+    .story-text .story-intro {
+        font-size: 21px;
+    }
+
+
+    .values-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .about-values,
+    .offer {
+        padding: 80px 6%;
+    }
+
+
+    .offer-list > div {
+        grid-template-columns: 50px 1fr;
+
+        gap: 15px;
+    }
+
+
+    .offer-list p {
+        grid-column: 2;
+    }
+
+
+    .about-cta {
+        padding: 80px 6%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
