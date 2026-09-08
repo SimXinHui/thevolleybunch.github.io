@@ -1,6 +1,6 @@
 /* =========================================
    THE VOLLEY BUNCH
-   MAIN WEBSITE STYLESHEET
+   MAIN WEBSITE STYLES
 ========================================= */
 
 
@@ -10,38 +10,35 @@
 
 :root {
 
-    --blue: #075bb5;
+    --navy: #0054A6;
+    --blue: #0077B6;
 
-    --dark-blue: #064b94;
+    --yellow: #FFC20A;
 
-    --navy: #003f88;
+    --orange: #F4511E;
 
-    --orange: #f04b23;
+    --cream: #FFF9ED;
 
-    --yellow: #ffb800;
+    --white: #FFFFFF;
 
-    --white: #ffffff;
+    --dark: #17202A;
 
-    --cream: #fffaf0;
-
-    --light-blue: #eef6ff;
-
-    --dark: #12304f;
+    --grey: #666666;
 
 }
 
 
 /* =========================================
-   RESET
+   GENERAL
 ========================================= */
 
 * {
 
+    box-sizing: border-box;
+
     margin: 0;
 
     padding: 0;
-
-    box-sizing: border-box;
 
 }
 
@@ -64,6 +61,26 @@ body {
 
     color: var(--navy);
 
+    line-height: 1.5;
+
+}
+
+
+/* Remove default link styling */
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+/* Images */
+
+img {
+
+    max-width: 100%;
+
 }
 
 
@@ -73,24 +90,25 @@ body {
 
 .navbar {
 
-    height: 84px;
+    position: sticky;
 
-    background: var(--white);
+    top: 0;
+
+    z-index: 1000;
+
+    height: 90px;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: space-between;
 
-    padding: 0 8%;
+    align-items: center;
 
-    position: relative;
+    padding: 10px 6%;
 
-    z-index: 100;
+    background: var(--white);
 
-    border-bottom:
-        2px solid var(--blue);
+    border-bottom: 2px solid var(--navy);
 
 }
 
@@ -108,11 +126,11 @@ body {
 
 .nav-logo img {
 
-    height: 68px;
+    width: 70px;
 
-    width: auto;
+    height: 70px;
 
-    display: block;
+    object-fit: contain;
 
 }
 
@@ -125,18 +143,16 @@ body {
 
     align-items: center;
 
-    gap: 36px;
+    gap: 35px;
 
 }
 
 
 .nav-links a {
 
-    text-decoration: none;
-
     color: var(--navy);
 
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 800;
 
@@ -144,12 +160,12 @@ body {
 
     position: relative;
 
-    padding: 10px 0;
-
-    transition: 0.25s ease;
+    padding: 8px 0;
 
 }
 
+
+/* Hover */
 
 .nav-links a:hover {
 
@@ -158,7 +174,7 @@ body {
 }
 
 
-/* ACTIVE LINK */
+/* Active page */
 
 .nav-links a.active {
 
@@ -166,6 +182,8 @@ body {
 
 }
 
+
+/* Small line under active page */
 
 .nav-links a.active::after {
 
@@ -187,15 +205,38 @@ body {
 
 
 /* =========================================
-   HERO / WELCOME SECTION
+   GENERAL SECTION SETTINGS
+========================================= */
+
+section {
+
+    padding: 100px 8%;
+
+}
+
+
+.section-label {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================
+   HERO
 ========================================= */
 
 .hero {
 
     position: relative;
 
-    min-height:
-        calc(100vh - 84px);
+    min-height: calc(100vh - 90px);
 
     display: flex;
 
@@ -203,34 +244,20 @@ body {
 
     justify-content: flex-start;
 
-    padding:
-        90px 8%;
+    padding: 100px 8%;
 
     overflow: hidden;
 
-    color: var(--white);
-
     background-image:
-        url("images/tvb-pesta-mix.jpg");
+        url("images/tvb-pesta-mix-new.jpg");
 
     background-size: cover;
 
-    /*
-       Shows more of the upper part
-       of the photograph.
-    */
-
-    background-position:
-        center top;
+    background-position: center top;
 
     background-repeat: no-repeat;
-
 }
 
-
-/* =========================================
-   HERO PHOTO OVERLAY
-========================================= */
 
 .hero-overlay {
 
@@ -238,25 +265,11 @@ body {
 
     inset: 0;
 
-    /*
-       Blue translucent overlay.
-
-       This makes the photograph feel
-       more like part of the TVB branding
-       while keeping the team visible.
-    */
-
-    background:
-        rgba(0, 63, 136, 0.32);
+    background: rgba(255, 249, 237, 0.55);
 
     z-index: 1;
-
 }
 
-
-/* =========================================
-   HERO CONTENT
-========================================= */
 
 .hero-content {
 
@@ -264,95 +277,65 @@ body {
 
     z-index: 2;
 
-    max-width: 720px;
-
+    max-width: 750px;
 }
 
 
-/* =========================================
-   WELCOME TO
-========================================= */
+/* WELCOME TO */
 
 .small-heading {
 
-    font-size: 14px;
+    font-size: 13px;
 
-    font-weight: 900;
+    font-weight: 800;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
     color: var(--orange);
 
     margin-bottom: 20px;
 
-    text-shadow:
-        0 1px 4px rgba(0, 0, 0, 0.15);
-
 }
 
 
-/* =========================================
-   HERO TITLE
-========================================= */
+/* MAIN TITLE */
 
 .hero h1 {
 
     font-size:
-        clamp(70px, 10vw, 145px);
+        clamp(70px, 11vw, 150px);
 
     line-height: 0.82;
 
-    letter-spacing: -6px;
+    letter-spacing: -7px;
+
+    color: var(--navy);
+
+    margin-bottom: 40px;
 
     font-weight: 900;
 
-    color: var(--white);
-
-    margin-bottom: 42px;
-
-    /*
-       White makes the title stand out
-       against the team photo.
-    */
-
-    text-shadow:
-        3px 4px 0 var(--blue);
-
 }
 
 
-/* =========================================
-   HERO DESCRIPTION
-========================================= */
+/* DESCRIPTION */
 
 .hero-description {
 
-    max-width: 540px;
+    max-width: 520px;
 
-    font-size: 18px;
+    font-size: 19px;
 
     line-height: 1.6;
 
-    font-weight: 600;
-
-    color: var(--white);
+    color: var(--dark);
 
     margin-bottom: 35px;
-
-    /*
-       Soft shadow makes the text readable
-       even when people are behind it.
-    */
-
-    text-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.5);
 
 }
 
 
-/* =========================================
-   HERO BUTTONS
-========================================= */
+/* BUTTON CONTAINER */
 
 .hero-buttons {
 
@@ -366,7 +349,7 @@ body {
 
 
 /* =========================================
-   GENERAL BUTTONS
+   BUTTONS
 ========================================= */
 
 .button {
@@ -377,18 +360,15 @@ body {
 
     justify-content: center;
 
-    padding:
-        16px 25px;
+    padding: 15px 25px;
 
-    min-height: 50px;
+    font-size: 12px;
 
-    text-decoration: none;
+    font-weight: 800;
 
-    font-size: 13px;
+    letter-spacing: 1px;
 
-    font-weight: 900;
-
-    letter-spacing: 0.5px;
+    border: 2px solid transparent;
 
     transition:
         transform 0.2s ease,
@@ -405,16 +385,15 @@ body {
 }
 
 
-/* PRIMARY BUTTON */
+/* BLUE BUTTON */
 
 .button-primary {
 
-    background: var(--blue);
+    background: var(--navy);
 
     color: var(--white);
 
-    border:
-        2px solid var(--blue);
+    border-color: var(--navy);
 
 }
 
@@ -428,26 +407,46 @@ body {
 }
 
 
-/* SECONDARY BUTTON */
+/* OUTLINE BUTTON */
 
 .button-secondary {
 
-    background:
-        rgba(255, 255, 255, 0.85);
+    background: transparent;
 
-    color: var(--blue);
+    color: var(--navy);
 
-    border:
-        2px solid var(--blue);
+    border-color: var(--navy);
 
 }
 
 
 .button-secondary:hover {
 
-    background: var(--blue);
+    background: var(--navy);
 
     color: var(--white);
+
+}
+
+
+/* WHITE BUTTON */
+
+.button-light {
+
+    background: var(--white);
+
+    color: var(--navy);
+
+    border-color: var(--white);
+
+}
+
+
+.button-light:hover {
+
+    background: var(--yellow);
+
+    border-color: var(--yellow);
 
 }
 
@@ -458,62 +457,53 @@ body {
 
 .intro {
 
-    background: var(--blue);
+    background: var(--navy);
 
     color: var(--white);
 
-    padding:
-        110px 8%;
+    position: relative;
 
-    min-height: 600px;
-
-}
-
-
-/* SECTION LABEL */
-
-.section-label {
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    color: var(--orange);
-
-    margin-bottom: 30px;
+    z-index: 1;
 
 }
 
 
-/* INTRO HEADING */
+/* Section number */
+
+.intro .section-label {
+
+    color: var(--yellow);
+
+}
+
+
+/* Main heading */
 
 .intro h2 {
 
     font-size:
         clamp(55px, 8vw, 110px);
 
-    line-height: 0.9;
+    line-height: 0.88;
 
-    letter-spacing: -4px;
-
-    font-weight: 900;
+    letter-spacing: -5px;
 
     color: var(--white);
 
     margin-bottom: 45px;
 
+    font-weight: 900;
+
 }
 
 
-/* INTRO TEXT */
+/* Description */
 
 .intro-text {
 
-    max-width: 650px;
+    max-width: 700px;
 
-    font-size: 19px;
+    font-size: 20px;
 
     line-height: 1.7;
 
@@ -524,37 +514,40 @@ body {
 }
 
 
-/* TEXT LINK */
+/* Learn more */
+
+.intro .text-link {
+
+    color: var(--yellow);
+
+}
+
+
+/* =========================================
+   TEXT LINKS
+========================================= */
 
 .text-link {
 
     display: inline-block;
 
-    color: var(--white);
+    font-size: 12px;
 
-    text-decoration: none;
-
-    font-size: 13px;
-
-    font-weight: 900;
+    font-weight: 800;
 
     letter-spacing: 1px;
 
-    border-bottom:
-        2px solid var(--orange);
+    color: var(--orange);
 
-    padding-bottom: 7px;
-
-    transition: 0.2s ease;
+    transition:
+        transform 0.2s ease;
 
 }
 
 
 .text-link:hover {
 
-    color: var(--yellow);
-
-    border-color: var(--yellow);
+    transform: translateX(5px);
 
 }
 
@@ -565,9 +558,6 @@ body {
 
 .activities {
 
-    padding:
-        110px 8%;
-
     background: var(--cream);
 
     color: var(--navy);
@@ -575,20 +565,31 @@ body {
 }
 
 
+/* Section heading */
+
 .activities h2 {
 
     font-size:
-        clamp(55px, 8vw, 105px);
+        clamp(50px, 7vw, 90px);
 
-    line-height: 0.9;
+    line-height: 0.85;
 
-    letter-spacing: -4px;
+    letter-spacing: -5px;
+
+    color: var(--navy);
+
+    margin-bottom: 70px;
 
     font-weight: 900;
 
-    margin-bottom: 65px;
+}
 
-    color: var(--navy);
+
+/* Section label */
+
+.activities .section-label {
+
+    color: var(--orange);
 
 }
 
@@ -611,71 +612,77 @@ body {
 
 .activity-card {
 
-    background: var(--white);
-
-    border-top:
-        6px solid var(--blue);
+    min-height: 300px;
 
     padding: 35px;
 
-    min-height: 280px;
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: var(--white);
+
+    border: 2px solid var(--navy);
+
+    border-radius: 20px;
 
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
+        background 0.25s ease;
 
 }
 
 
 .activity-card:hover {
 
-    transform:
-        translateY(-8px);
+    transform: translateY(-8px);
 
-    box-shadow:
-        0 15px 35px
-        rgba(0, 63, 136, 0.15);
+    background: var(--yellow);
 
 }
 
+
+/* CARD NUMBER */
 
 .activity-card span {
 
-    display: block;
+    font-size: 12px;
+
+    font-weight: 800;
 
     color: var(--orange);
 
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 35px;
-
 }
 
+
+/* CARD TITLE */
 
 .activity-card h3 {
 
-    font-size: 40px;
+    font-size: 45px;
 
-    font-weight: 900;
+    line-height: 0.9;
 
-    color: var(--blue);
+    letter-spacing: -2px;
 
-    margin-bottom: 18px;
+    color: var(--navy);
 
 }
 
 
+/* CARD DESCRIPTION */
+
 .activity-card p {
 
-    font-size: 16px;
+    font-size: 15px;
 
     line-height: 1.6;
 
     color: var(--dark);
+
+    max-width: 300px;
 
 }
 
@@ -686,28 +693,38 @@ body {
 
 .home-events {
 
-    padding:
-        110px 8%;
+    background: var(--yellow);
 
-    background: var(--light-blue);
+    color: var(--navy);
 
 }
 
 
+/* Label */
+
+.home-events .section-label {
+
+    color: var(--orange);
+
+}
+
+
+/* Heading */
+
 .home-events h2 {
 
     font-size:
-        clamp(55px, 8vw, 105px);
+        clamp(50px, 7vw, 90px);
 
-    line-height: 0.9;
+    line-height: 0.85;
 
-    letter-spacing: -4px;
-
-    font-weight: 900;
+    letter-spacing: -5px;
 
     color: var(--navy);
 
     margin-bottom: 60px;
+
+    font-weight: 900;
 
 }
 
@@ -718,32 +735,32 @@ body {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: space-between;
+
+    align-items: center;
 
     gap: 30px;
 
-    background: var(--white);
+    padding: 35px 0;
 
-    border-left:
-        7px solid var(--orange);
+    border-top: 2px solid var(--navy);
 
-    padding:
-        40px 45px;
+    border-bottom: 2px solid var(--navy);
 
     margin-bottom: 30px;
 
 }
 
 
+/* EVENT DATE */
+
 .event-date {
 
     color: var(--orange);
 
-    font-size: 13px;
+    font-size: 12px;
 
-    font-weight: 900;
+    font-weight: 800;
 
     letter-spacing: 2px;
 
@@ -752,14 +769,16 @@ body {
 }
 
 
+/* EVENT TITLE */
+
 .home-event h3 {
 
     font-size:
-        clamp(30px, 4vw, 55px);
+        clamp(35px, 5vw, 60px);
 
-    line-height: 0.95;
+    line-height: 0.9;
 
-    font-weight: 900;
+    letter-spacing: -3px;
 
     color: var(--navy);
 
@@ -772,21 +791,24 @@ body {
 
 .home-cta {
 
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
     background: var(--orange);
 
     color: var(--white);
 
-    padding:
-        110px 8%;
-
-    display: flex;
-
-    align-items: center;
-
-    min-height: 500px;
-
 }
 
+
+/* CTA LABEL */
 
 .home-cta .section-label {
 
@@ -795,45 +817,22 @@ body {
 }
 
 
+/* CTA HEADING */
+
 .home-cta h2 {
 
     font-size:
         clamp(60px, 9vw, 120px);
 
-    line-height: 0.85;
+    line-height: 0.82;
 
-    letter-spacing: -5px;
+    letter-spacing: -6px;
+
+    color: var(--white);
+
+    margin-bottom: 40px;
 
     font-weight: 900;
-
-    color: var(--white);
-
-    margin-bottom: 45px;
-
-}
-
-
-/* CTA BUTTON */
-
-.button-light {
-
-    background: var(--white);
-
-    color: var(--orange);
-
-    border:
-        2px solid var(--white);
-
-}
-
-
-.button-light:hover {
-
-    background: var(--navy);
-
-    border-color: var(--navy);
-
-    color: var(--white);
 
 }
 
@@ -844,42 +843,50 @@ body {
 
 footer {
 
-    background: var(--blue);
+    padding: 55px 8%;
+
+    background: var(--navy);
 
     color: var(--white);
-
-    padding:
-        65px 8% 35px;
 
     display: grid;
 
     grid-template-columns:
-        1fr auto;
+        1fr auto auto;
 
-    gap: 40px;
+    gap: 50px;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 1;
 
 }
 
 
+/* FOOTER TITLE */
+
 footer strong {
 
-    font-size: 20px;
+    color: var(--yellow);
 
-    font-weight: 900;
+    font-size: 15px;
 
     letter-spacing: 1px;
 
 }
 
 
+/* FOOTER DESCRIPTION */
+
 footer p {
 
-    margin-top: 10px;
+    color: var(--white);
 
-    font-size: 14px;
+    font-size: 13px;
 
-    color:
-        rgba(255, 255, 255, 0.8);
+    margin-top: 6px;
 
 }
 
@@ -890,9 +897,7 @@ footer p {
 
     display: flex;
 
-    gap: 30px;
-
-    align-items: flex-start;
+    gap: 25px;
 
 }
 
@@ -905,11 +910,10 @@ footer p {
 
     font-size: 13px;
 
-    font-weight: 800;
+    font-weight: 700;
 
-    text-transform: uppercase;
-
-    transition: 0.2s ease;
+    transition:
+        color 0.2s ease;
 
 }
 
@@ -923,18 +927,11 @@ footer p {
 
 /* COPYRIGHT */
 
-.copyright {
+footer .copyright {
 
-    grid-column:
-        1 / -1;
+    margin: 0;
 
-    border-top:
-        1px solid
-        rgba(255, 255, 255, 0.25);
-
-    padding-top: 25px;
-
-    margin-top: 15px;
+    color: var(--white);
 
     font-size: 12px;
 
@@ -942,39 +939,621 @@ footer p {
 
 
 /* =========================================
-   RESPONSIVE — TABLET
+   EVENTS PAGE
 ========================================= */
 
-@media (max-width: 900px) {
+.events-hero {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: var(--orange);
+
+    color: var(--white);
+
+}
+
+
+.events-hero .small-heading {
+
+    color: var(--yellow);
+
+}
+
+
+.events-hero h1 {
+
+    font-size:
+        clamp(70px, 12vw, 160px);
+
+    line-height: 0.8;
+
+    letter-spacing: -7px;
+
+    color: var(--white);
+
+    margin-bottom: 35px;
+
+    font-weight: 900;
+
+}
+
+
+.events-hero > p:last-child {
+
+    max-width: 600px;
+
+    font-size: 20px;
+
+}
+
+
+/* UPCOMING EVENTS */
+
+.upcoming-events {
+
+    background: var(--cream);
+
+}
+
+
+.upcoming-events .section-label {
+
+    color: var(--orange);
+
+}
+
+
+.upcoming-events h2,
+.past-events h2 {
+
+    font-size:
+        clamp(50px, 7vw, 90px);
+
+    line-height: 0.85;
+
+    letter-spacing: -5px;
+
+    color: var(--navy);
+
+    margin-bottom: 70px;
+
+    font-weight: 900;
+
+}
+
+
+/* UPCOMING EVENT */
+
+.upcoming-event {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    margin-bottom: 80px;
+
+}
+
+
+/* EVENT IMAGE */
+
+.event-image {
+
+    position: relative;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: var(--yellow);
+
+}
+
+
+.event-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* EVENT BADGE */
+
+.event-badge {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background: var(--orange);
+
+    color: var(--white);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* EVENT INFO */
+
+.event-info {
+
+    max-width: 600px;
+
+}
+
+
+.event-info h3 {
+
+    color: var(--navy);
+
+    font-size:
+        clamp(40px, 5vw, 65px);
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.event-info > p {
+
+    color: var(--grey);
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* EVENT DETAILS */
+
+.event-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 20px 0;
+
+    margin-bottom: 30px;
+
+    border-top: 1px solid #D8D0C0;
+
+    border-bottom: 1px solid #D8D0C0;
+
+}
+
+
+.event-details div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.event-details span {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--grey);
+
+}
+
+
+.event-details strong {
+
+    font-size: 14px;
+
+    color: var(--navy);
+
+}
+
+
+/* PLACEHOLDER EVENT */
+
+.placeholder-image {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 100px;
+
+}
+
+
+.placeholder-image .event-badge {
+
+    background: var(--navy);
+
+}
+
+
+/* =========================================
+   PAST EVENTS
+========================================= */
+
+.past-events {
+
+    background: var(--white);
+
+}
+
+
+.past-events .section-label {
+
+    color: var(--orange);
+
+}
+
+
+.past-event-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* PAST EVENT CARD */
+
+.past-event-card {
+
+    border: 2px solid var(--navy);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: var(--cream);
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.past-event-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+/* PAST EVENT IMAGE */
+
+.past-event-image {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+}
+
+
+.past-event-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.past-event-card:hover
+.past-event-image img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* PAST EVENT CONTENT */
+
+.past-event-content {
+
+    padding: 30px;
+
+}
+
+
+.past-event-content h3 {
+
+    font-size: 30px;
+
+    line-height: 0.9;
+
+    letter-spacing: -2px;
+
+    color: var(--navy);
+
+    margin-bottom: 20px;
+
+}
+
+
+.past-event-content >
+p:not(.event-date) {
+
+    color: var(--grey);
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.past-event-content .text-link {
+
+    color: var(--orange);
+
+}
+
+
+/* =========================================
+   EVENTS CTA
+========================================= */
+
+.event-cta {
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 60px;
+
+}
+
+
+.event-cta .section-label {
+
+    color: var(--yellow);
+
+}
+
+
+.event-cta h2 {
+
+    font-size:
+        clamp(55px, 8vw, 100px);
+
+    line-height: 0.85;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.event-cta img {
+
+    width: 330px;
+
+    max-width: 35%;
+
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 700px) {
 
 
     .navbar {
 
-        padding:
-            0 5%;
+        height: auto;
+
+        min-height: 80px;
+
+        padding: 10px 5%;
+
+    }
+
+
+    .nav-logo img {
+
+        width: 55px;
+
+        height: 55px;
 
     }
 
 
     .nav-links {
 
-        gap: 20px;
+        gap: 15px;
 
     }
 
 
+    .nav-links a {
+
+        font-size: 10px;
+
+        letter-spacing: 0.5px;
+
+    }
+
+
+    .nav-links a.active::after {
+
+        height: 2px;
+
+    }
+
+
+    /* Sections */
+
+    section {
+
+        padding: 75px 7%;
+
+    }
+
+
+    /* Hero */
+
     .hero {
 
+        min-height:
+            calc(100vh - 80px);
+
         padding:
-            80px 5%;
+            80px 7%;
+
+        background-position:
+            center center;
+
+    }
+
+
+    .hero-overlay {
+
+        background:
+            rgba(255, 249, 237, 0.78);
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(60px, 17vw, 100px);
+
+        letter-spacing: -4px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 16px;
+
+    }
+
+
+    /* Who We Are */
+
+    .intro h2 {
+
+        font-size:
+            clamp(55px, 15vw, 90px);
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .intro-text {
+
+        font-size: 17px;
+
+    }
+
+
+    /* Activities */
+
+    .activities h2 {
+
+        font-size:
+            clamp(50px, 14vw, 80px);
+
+        letter-spacing: -3px;
 
     }
 
 
     .activity-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .activity-card {
+
+        min-height: 250px;
+
+    }
+
+
+    /* Home Events */
+
+    .home-events h2 {
+
+        font-size:
+            clamp(50px, 14vw, 80px);
+
+        letter-spacing: -3px;
 
     }
 
@@ -988,10 +1567,45 @@ footer p {
     }
 
 
+    .home-event h3 {
+
+        font-size: 45px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    /* CTA */
+
+    .home-cta {
+
+        min-height: 450px;
+
+        text-align: left;
+
+        justify-content: flex-start;
+
+    }
+
+
+    .home-cta h2 {
+
+        font-size:
+            clamp(60px, 17vw, 100px);
+
+        letter-spacing: -4px;
+
+    }
+
+
+    /* Footer */
+
     footer {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
+
+        gap: 25px;
 
     }
 
@@ -1000,94 +1614,96 @@ footer p {
 
         flex-wrap: wrap;
 
+        gap: 20px;
+
+    }
+
+
+    /* Events page */
+
+    .events-hero h1 {
+
+        font-size:
+            clamp(65px, 18vw, 110px);
+
+        letter-spacing: -4px;
+
+    }
+
+
+    .upcoming-event {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-bottom: 70px;
+
+    }
+
+
+    .event-info h3 {
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .past-event-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .event-cta {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .event-cta img {
+
+        max-width: 60%;
+
+        width: 280px;
+
+        align-self: center;
+
     }
 
 }
 
 
 /* =========================================
-   RESPONSIVE — MOBILE
+   SMALL PHONES
 ========================================= */
 
-@media (max-width: 600px) {
-
-
-    .navbar {
-
-        height: auto;
-
-        min-height: 80px;
-
-        padding:
-            10px 5%;
-
-        flex-direction: column;
-
-        gap: 10px;
-
-    }
-
-
-    .nav-logo img {
-
-        height: 55px;
-
-    }
+@media (max-width: 450px) {
 
 
     .nav-links {
 
-        gap: 15px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
+        gap: 9px;
 
     }
 
 
     .nav-links a {
 
-        font-size: 11px;
+        font-size: 9px;
 
     }
 
 
-    .hero {
+    .nav-logo img {
 
-        min-height:
-            calc(100vh - 110px);
+        width: 48px;
 
-        padding:
-            70px 6%;
-
-        background-position:
-            center top;
-
-    }
-
-
-    .hero-overlay {
-
-        background:
-            rgba(0, 63, 136, 0.42);
-
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            clamp(55px, 18vw, 90px);
-
-        letter-spacing: -3px;
-
-    }
-
-
-    .hero-description {
-
-        font-size: 16px;
+        height: 48px;
 
     }
 
@@ -1103,49 +1719,35 @@ footer p {
 
     .button {
 
-        width: auto;
+        width: 100%;
 
     }
 
 
-    .intro,
-    .activities,
-    .home-events,
-    .home-cta {
+    .hero h1 {
 
-        padding:
-            80px 6%;
+        font-size: 58px;
 
     }
 
 
-    .intro h2,
-    .activities h2,
+    .intro h2 {
+
+        font-size: 55px;
+
+    }
+
+
+    .activities h2 {
+
+        font-size: 50px;
+
+    }
+
+
     .home-events h2 {
 
-        letter-spacing: -2px;
-
-    }
-
-
-    .activity-card {
-
-        min-height: auto;
-
-    }
-
-
-    .home-event {
-
-        padding:
-            30px;
-
-    }
-
-
-    .home-cta h2 {
-
-        letter-spacing: -3px;
+        font-size: 50px;
 
     }
 
